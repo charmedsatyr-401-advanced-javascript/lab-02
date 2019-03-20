@@ -1,168 +1,63 @@
-![CF](http://i.imgur.com/7v5ASc8.png) LAB
-=================================================
+# LAB: Classes, Inheritance, Functional Programming
 
-## Lab 02
+## Before you begin
+* You'll need to initialize this lab folder as a new node module, install your dependencies, setup your npm script commands, and pull in your config files
 
-### Author: Joseph Wolfe
+### Objects and Classes
+In the `objects` folder, there is a full implementation of a Car and Motorcycle object created using a constructor function, with an index.js file that you can use to visually play with the objects as well as tests.
 
-### Links and Resources
-* [repo](https://github.com/charmedsatyr-401-advanced-javascript/lab-02)
-* [travis](https://travis-ci.org/charmedsatyr-401-advanced-javascript/lab-02)
+In the `objects/__tests__` folder, you'll find a file called `vehicle.test.js` that tests the implementation of both a `Car` and a `Motorcycle` using the constructor pattern.
 
-#### Documentation
-* [lab assignment](https://github.com/codefellows/seattle-javascript-401d29/blob/master/curriculum/class-02/lab/README.md)
+#### Requirements
+* Implement both `Car` and `Motorcycle` using a Javascript `Class` (in the `vehicle-class.js` file)
+* Implement both `Car` and `Motorcycle` using a Javascript `Factory Function` (in the `vehicle-factory.js` file)
+* The tests are pre-configured to run only the constructor variety, but can handle more as you add them.
+ **Software Engineering Note!** This is the heart of a refactor -- re-implement the same functionality, the same signature, and the same I/O while completely rewriting the underlying implementation
 
-### Modules
-* `list-class.js`
-* `list-constructor.js`
-* `flying-vehicle-class.js`
-* `flying-vehicle-constructor.js`
-* `flying-vehicle-factory.js`
-* `sea-creature-class.js`
-* `sea-creature-constructor.js`
-* `sea-creature-factory.js`
-* `vehicle-class.js`
-* `vehicle-constructor.js`
-* `vehicle-factory.js`
-##### Exported Values and Methods from `list-class.js` and `list-constructor.js`
-
-###### `List`
-* `{ length: 0, data: {} }`
-
-###### `List.push(item)`
-* `List.push('a')` -> `{ length: 1, data: { '0': 'a' } }`
-
-###### `List.pop()`
-* Based on Array method.
-
-###### `List.shift()`
-
-###### `List.unshift(item)`
-
-###### `List.unshift(item)`
-
-###### `List.forEach(item)`
-
-###### `List.map(item)`
-
-###### `List.filter(item)`
-
-###### `List.reduce(item)`
-
-##### Exported Values and Methods from `flying-vehicle-class.js`, `flying-vehicle-constructor.js` and `flying-vehicle-factory.js`
-###### `FlyingVehicle`
-
-###### `FlyingVehicle.fly()`
-
-###### `FlyingVehicle.stop()`
-
-###### `FlyingVehicle.Airplane()`
-
-###### `FlyingVehicle.Airplane.stop`
-
-###### `FlyingVehicle.Helicopter`
-
-###### `FlyingVehicle.Helicopter.hover()`
-
-##### Exported Values and Methods from `sea-creature-class.js`, `sea-creature-constructor.js` and `sea-creature-factory.js`
-###### `SeaCreature`
-
-###### `SeaCreature.swim()`
-
-###### `SeaCreature.hide()`
-
-###### `SeaCreature.Fish`
-
-###### `SeaCreature.Lobster`
-
-###### `SeaCreature.Lobster.pinch()`
-
-###### `SeaCreature.Helicopter.hover()`
-
-##### Exported Values and Methods from `vehicle-class.js`, `vehicle-constructor.js` and `vehicle-factory.js`
-###### `Vehicle`
-
-###### `Vehicle.drive()`
-
-###### `Vehicle.stop()`
-
-###### `Vehicle.Car`
-
-###### `Vehicle.Motorcycle`
-
-###### `Vehicle.Motorcycle.wheelie()`
-
-
-### Setup
-#### Running the app
-* N/A
+##### Stretch Goals
+* Repeat the process in all directions
+  * Empty out your constructor and factory implmentations, keeping only the `class` for reference
+  * Implement `constructor` and `factory` again
+  * Repeat again, this time using only the `factory` as a starting point and clearing the others.
   
+Why? Knowing how to easily move between object creation patterns is essential. You'll be doing quite a bit of this, so it's good to not only recognize but work the various patterns seen here.
+
 #### Tests
-* How do you run tests?
+* The tests are already written 
+* Not all implementations are wired, however
+* Keep the tests working as you add new implementations
+
+
+### List Module
+  * Create a new folder in the lab directory called `list` to house your code for this assignment
+  * implement a full List constructor using a **constructor function**
+  * implement the `.length` property
+  * implement the following methods on the list constructor
+    * `push()`
+    * `pop()`
+    * `shift()`
+    * `unshift()`
+    * `forEach()`
+  * Do not use any built-in array methods to do this
   
-  `npm run test` 
+  * **Re-Implement using a Class definition**
+    * Do this after your tests are completed.
+    * Note, that this should be a refactor, so your tests should remain unchanged and green once your re-implementation is completed
   
-  `npm run watch`
-* What assertions were made?
+##### Tests
+* tests that ensure the list module functions correctly with error-check parameters
+* tests that the correct errors are thrown with invalid arguments exist
+* tests to ensure that the list module functions return the correct results when invoked with valid arguments
 
-`list-class.js` and `list-constructor.js`
-1. It starts with a length of -1 and an empty data set 
-2. It push(item) pushes items to the end of the data set 
-3. It push(item) requires an argument 
-4. It pop() removes items off the end of the data set 
-5. It unshift(item) adds items to the beginning of the data set 
-6. It unshift(item) requires an argument 
-7. It shift() removes an item from the beginning of the data set 
-8. It shift() returns the value of the first item in the data set 
-9. It forEach(cb) executes a callback forEach item in the data set 
-10. It forEach(cb) requires a callback function 
-11. It map(cb) executes a callback on each item in the data set and returns a new set of the results 
-12. It map(cb) requires a callback function 
-13. It filter(cb) executes a callback on each item in the data set and returns a new set of all items that returned truthy 
-14. It filter(cb) requires a callback function 
-15. It reduce(cb) executes a callback against an acculmulator and each item in the data set and returns a single item 
-16. It reduce(cb) requires a callback function 
- 
-`flying-vehicle-class.js`, `flying-vehicle-constructor.js`, and `flying-vehicle-factory.js`
-* Airplane
-1. It has 2 wings
-2. It can fly
-3. It cannot stop
+##### Stretch Goal:
+  * Implement these methods as well
+    * `map()`
+    * `filter()`
+    * `reduce()`
+    * `slice()`
+    * `splice()`
+    * `reverse()`
 
-* Helicopter
-1. It has 0 wings
-2. It can fly
-3. It can stop
-4. It can hover
 
-`sea-creature-class`, `sea-creature-constructor.js`, and `sea-creature-factory.js`
-* Fish
-1. It has 8 fins
-2. It can swim
-3. It can hide
-4. It cannot pinch
-
-* Lobster
-1. It has 2 claws
-2. It can swim
-3. It can hide
-4. It can pinch
-
-`vehicle-class.js`, `vehicle-constructor.js`, and `vehicle-factory.js`
-* Car
-1. It has 4 wheels
-2. It can drive
-3. It can stop
-4. It cannot do a wheelie
-
-* Motorcycle
-1. It has 2 wheels
-2. It can drive
-3. It can stop
-4. It cannot do a wheelie
-
-* What assertions need to be / should be made?
-TBD. Documentation should be improved.
-
-#### UML
-N/A
+### Assignemnt Submission Instructions
+Refer to the [lab-instructions.md](../../../reference/submission-instructions/labs.md) for the complete lab submission process and expectations
