@@ -52,14 +52,17 @@ List.prototype.unshift = function(item) {
 };
 
 List.prototype.forEach = function(cb) {
+  if (typeof cb !== 'function') {
+    return undefined;
+  }
   for (let i = 0; i < this.length; i++) {
     cb(this.data[i], i);
   }
 };
 
 List.prototype.map = function(cb) {
-  if (!cb) {
-    return;
+  if (typeof cb !== 'function') {
+    return undefined;
   }
   const newData = {};
   for (let i = 0; i < this.length; i++) {
@@ -70,8 +73,8 @@ List.prototype.map = function(cb) {
 };
 
 List.prototype.filter = function(cb) {
-  if (!cb) {
-    return;
+  if (typeof cb !== 'function') {
+    return undefined;
   }
   let newLength = 0;
   const newData = {};
@@ -87,6 +90,9 @@ List.prototype.filter = function(cb) {
 };
 
 List.prototype.reduce = function(cb) {
+  if (typeof cb !== 'function') {
+    return undefined;
+  }
   let acc = this.data[0];
   for (let i = 1; i < this.length; i++) {
     acc = cb(acc, this.data[i], i);
