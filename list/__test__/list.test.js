@@ -1,8 +1,8 @@
 'use strict';
 
 // These 2 should be interchangeable!
-// const List = require('../list.js');
-const List = require('../list-constructor.js');
+const List = require('../list-class.js');
+// const List = require('../list-constructor.js');
 
 describe('List Data Structure', () => {
   it('starts with a length of -1 and an empty data set', () => {
