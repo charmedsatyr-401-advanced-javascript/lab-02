@@ -5,9 +5,13 @@ class FlyingVehicle {
     this.name = name;
     this.wings = wings;
   }
+  /**
+   */
   fly() {
     return 'Moving Forward';
   }
+  /**
+   */
   stop() {
     return 'Stopping';
   }
@@ -18,6 +22,8 @@ class Airplane extends FlyingVehicle {
     super(name);
     this.wings = 2;
   }
+  /**
+   */
   stop() {
     return false;
   }
@@ -28,6 +34,8 @@ class Helicopter extends FlyingVehicle {
     super(name);
     this.wings = 0;
   }
+  /**
+   */
   hover() {
     return 'Chukchukchukchuk!';
   }

@@ -5,9 +5,13 @@ class SeaCreature {
     this.name = name;
     this.fins = fins;
   }
+  /**
+   */
   swim() {
     return 'Moving Forward';
   }
+  /**
+   */
   hide() {
     return 'Hiding...';
   }
@@ -25,6 +29,8 @@ class Lobster extends SeaCreature {
     super(name);
     this.claws = 2;
   }
+  /**
+   */
   pinch() {
     return 'Ouch!';
   }

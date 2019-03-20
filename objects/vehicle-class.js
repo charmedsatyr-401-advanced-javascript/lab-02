@@ -5,9 +5,13 @@ class Vehicle {
     this.name = name;
     this.wheels = wheels;
   }
+  /**
+   */
   drive() {
     return 'Moving Forward';
   }
+  /**
+   */
   stop() {
     return 'Stopping';
   }
@@ -25,6 +29,8 @@ class Motorcycle extends Vehicle {
     super(name);
     this.wheels = 2;
   }
+  /**
+   */
   wheelie() {
     return 'Wheee!';
   }
