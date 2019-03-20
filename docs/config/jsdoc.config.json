@@ -1,0 +1,9 @@
+{
+  "source": {
+    "include": ["./objects", "./list"]
+  },
+  "opts": {
+    "destination": "./docs",
+    "recurse": true
+  }
+}
